@@ -1,3 +1,5 @@
+
+// 사과
 var data1 = [
     [
         {"axis":"탄수화물","value":42},
@@ -27,7 +29,220 @@ var data1 = [
     ],
 ];
 
+// 귤
 var data2 = [
+    [
+        {"axis":"탄수화물","value":42},
+        {"axis":"단백질","value":9},
+        {"axis":"칼슘","value":10},
+        {"axis":"인","value":20},
+        {"axis":"철", "value":33},
+        {"axis":"칼륨","value":53},
+        {"axis":"A","value":44},
+        {"axis":"B1","value":58},
+        {"axis":"B2","value":29},
+        {"axis":"나이아신","value":20},
+        {"axis":"C","value":100},
+    ],
+    [
+        {"axis":"탄수화물","value":100},
+        {"axis":"단백질","value":5},
+        {"axis":"칼슘","value":7},
+        {"axis":"인","value":9},
+        {"axis":"철", "value":58},
+        {"axis":"칼륨","value":35},
+        {"axis":"A","value":0},
+        {"axis":"B1","value":33},
+        {"axis":"B2","value":100},
+        {"axis":"나이아신","value":100},
+        {"axis":"C","value":100},
+    ],
+];
+
+
+// 딸기
+var data3 = [
+    [
+        {"axis":"탄수화물","value":42},
+        {"axis":"단백질","value":9},
+        {"axis":"칼슘","value":10},
+        {"axis":"인","value":20},
+        {"axis":"철", "value":33},
+        {"axis":"칼륨","value":53},
+        {"axis":"A","value":44},
+        {"axis":"B1","value":58},
+        {"axis":"B2","value":29},
+        {"axis":"나이아신","value":20},
+        {"axis":"C","value":100},
+    ],
+    [
+        {"axis":"탄수화물","value":100},
+        {"axis":"단백질","value":5},
+        {"axis":"칼슘","value":7},
+        {"axis":"인","value":9},
+        {"axis":"철", "value":58},
+        {"axis":"칼륨","value":35},
+        {"axis":"A","value":0},
+        {"axis":"B1","value":33},
+        {"axis":"B2","value":100},
+        {"axis":"나이아신","value":100},
+        {"axis":"C","value":100},
+    ],
+];
+
+// 복숭아
+var data4 = [
+    [
+        {"axis":"탄수화물","value":42},
+        {"axis":"단백질","value":9},
+        {"axis":"칼슘","value":10},
+        {"axis":"인","value":20},
+        {"axis":"철", "value":33},
+        {"axis":"칼륨","value":53},
+        {"axis":"A","value":44},
+        {"axis":"B1","value":58},
+        {"axis":"B2","value":29},
+        {"axis":"나이아신","value":20},
+        {"axis":"C","value":100},
+    ],
+    [
+        {"axis":"탄수화물","value":100},
+        {"axis":"단백질","value":5},
+        {"axis":"칼슘","value":7},
+        {"axis":"인","value":9},
+        {"axis":"철", "value":58},
+        {"axis":"칼륨","value":35},
+        {"axis":"A","value":0},
+        {"axis":"B1","value":33},
+        {"axis":"B2","value":100},
+        {"axis":"나이아신","value":100},
+        {"axis":"C","value":100},
+    ],
+];
+
+// 블루베리
+var data5 = [
+    [
+        {"axis":"탄수화물","value":42},
+        {"axis":"단백질","value":9},
+        {"axis":"칼슘","value":10},
+        {"axis":"인","value":20},
+        {"axis":"철", "value":33},
+        {"axis":"칼륨","value":53},
+        {"axis":"A","value":44},
+        {"axis":"B1","value":58},
+        {"axis":"B2","value":29},
+        {"axis":"나이아신","value":20},
+        {"axis":"C","value":100},
+    ],
+    [
+        {"axis":"탄수화물","value":100},
+        {"axis":"단백질","value":5},
+        {"axis":"칼슘","value":7},
+        {"axis":"인","value":9},
+        {"axis":"철", "value":58},
+        {"axis":"칼륨","value":35},
+        {"axis":"A","value":0},
+        {"axis":"B1","value":33},
+        {"axis":"B2","value":100},
+        {"axis":"나이아신","value":100},
+        {"axis":"C","value":100},
+    ],
+];
+
+
+// 감
+var data6 = [
+    [
+        {"axis":"탄수화물","value":42},
+        {"axis":"단백질","value":9},
+        {"axis":"칼슘","value":10},
+        {"axis":"인","value":20},
+        {"axis":"철", "value":33},
+        {"axis":"칼륨","value":53},
+        {"axis":"A","value":44},
+        {"axis":"B1","value":58},
+        {"axis":"B2","value":29},
+        {"axis":"나이아신","value":20},
+        {"axis":"C","value":100},
+    ],
+    [
+        {"axis":"탄수화물","value":100},
+        {"axis":"단백질","value":5},
+        {"axis":"칼슘","value":7},
+        {"axis":"인","value":9},
+        {"axis":"철", "value":58},
+        {"axis":"칼륨","value":35},
+        {"axis":"A","value":0},
+        {"axis":"B1","value":33},
+        {"axis":"B2","value":100},
+        {"axis":"나이아신","value":100},
+        {"axis":"C","value":100},
+    ],
+];
+
+// 살구
+var data7 = [
+    [
+        {"axis":"탄수화물","value":42},
+        {"axis":"단백질","value":9},
+        {"axis":"칼슘","value":10},
+        {"axis":"인","value":20},
+        {"axis":"철", "value":33},
+        {"axis":"칼륨","value":53},
+        {"axis":"A","value":44},
+        {"axis":"B1","value":58},
+        {"axis":"B2","value":29},
+        {"axis":"나이아신","value":20},
+        {"axis":"C","value":100},
+    ],
+    [
+        {"axis":"탄수화물","value":100},
+        {"axis":"단백질","value":5},
+        {"axis":"칼슘","value":7},
+        {"axis":"인","value":9},
+        {"axis":"철", "value":58},
+        {"axis":"칼륨","value":35},
+        {"axis":"A","value":0},
+        {"axis":"B1","value":33},
+        {"axis":"B2","value":100},
+        {"axis":"나이아신","value":100},
+        {"axis":"C","value":100},
+    ],
+];
+
+// 포도
+var data8 = [
+    [
+        {"axis":"탄수화물","value":42},
+        {"axis":"단백질","value":9},
+        {"axis":"칼슘","value":10},
+        {"axis":"인","value":20},
+        {"axis":"철", "value":33},
+        {"axis":"칼륨","value":53},
+        {"axis":"A","value":44},
+        {"axis":"B1","value":58},
+        {"axis":"B2","value":29},
+        {"axis":"나이아신","value":20},
+        {"axis":"C","value":100},
+    ],
+    [
+        {"axis":"탄수화물","value":100},
+        {"axis":"단백질","value":5},
+        {"axis":"칼슘","value":7},
+        {"axis":"인","value":9},
+        {"axis":"철", "value":58},
+        {"axis":"칼륨","value":35},
+        {"axis":"A","value":0},
+        {"axis":"B1","value":33},
+        {"axis":"B2","value":100},
+        {"axis":"나이아신","value":100},
+        {"axis":"C","value":100},
+    ],
+];
+
+// 청포도
+var data9 = [
     [
         {"axis":"탄수화물","value":42},
         {"axis":"단백질","value":9},
@@ -61,8 +276,30 @@ RadarChart.draw('#chart-radar-1', data1, {
     lineColor: '#fd364b',
 });
 RadarChart.draw('#chart-radar-2', data2, {
-    lineColor: '#fd364b',
+    lineColor: '#fbb344',
 });
+RadarChart.draw('#chart-radar-3', data3, {
+    lineColor: '#ec5372',
+});
+RadarChart.draw('#chart-radar-4', data4, {
+    lineColor: '#ffa4cb',
+});
+RadarChart.draw('#chart-radar-5', data5, {
+    lineColor: '#2640b1',
+});
+RadarChart.draw('#chart-radar-6', data6, {
+    lineColor: '#ffa73d',
+});
+RadarChart.draw('#chart-radar-7', data7, {
+    lineColor: '#fca48e',
+});
+RadarChart.draw('#chart-radar-8', data8, {
+    lineColor: '#6c1fcd',
+});
+RadarChart.draw('#chart-radar-9', data9, {
+    lineColor: '#89db2e',
+});
+
 
 // var dataBasic = [95, 3, 2];
 // var domain = ["Data1", "Data2", "Data3"];

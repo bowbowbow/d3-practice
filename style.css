@@ -1,7 +1,10 @@
 @charset "UTF-8";
 
+* {
+	box-sizing: border-box;
+}
 .content {
-	width: 1024px;
+	width: 1080px;
 	margin: 0px auto;
 }
 
@@ -13,10 +16,11 @@
 .grid {
 	position: relative;
 	float: left;
-	width: 12%;
-	height: 20px;
+	width: 16%;
+	height: 60px;
 	padding: 15px;
 	font-size: 12px;
+	font-size: 14px;
 }
 
 .grid > .circle {
@@ -27,6 +31,25 @@
 	height: 5px;
 	border-radius:50%;
 	background-color: red;
+}
+
+.chart-title {
+	position: relative;
+	font-size: 17px;
+	width: 150px;
+	margin:0px auto;
+	font-weight: 600;
+	height: 40px;
+	padding-left: 66px;
+	line-height: 36px;
+	box-sizing: border-box;
+}
+
+.chart-title > img {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: 25px;
 }
 
 .radar-chart {

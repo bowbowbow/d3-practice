@@ -9,8 +9,8 @@ var RadarChart = {
                 return colors[i];
             },
             radius: 5,
-            w: 200,
-            h: 200,
+            w: 220,
+            h: 220,
             factor: 1,
             factorLegend: .85,
             levels: 5,
