@@ -47,7 +47,14 @@ var RadarChart = {
             }
         }
         
-        cfg.maxValue = Math.max(cfg.maxValue, d3.max(data, function(i){return d3.max(i.map(function(o){return o.value;}));}));
+        cfg.maxValue = Math.max(cfg.maxValue, d3.max(data, function(i){
+            return d3.max(i.map(function(o){
+                return o.value;
+            }));
+        }));
+        // 표시 최댓값 100으로 제한
+        cfg.maxValue = Math.min(100, cfg.maxValue);
+
         var allAxis = (data[0].map(function(i, j){return i.axis;}));
         var total = allAxis.length;
         var radius = cfg.factor*Math.min(cfg.w/2, cfg.h/2);
@@ -158,14 +165,16 @@ var RadarChart = {
             return cfg.h/2*(1-Math.cos(i*cfg.radians/total))-20*Math.cos(i*cfg.radians/total);
         });
         
+        console.log('cfg.maxValue :', cfg.maxValue);
         // 선분 그리기
         data.forEach(function(y, x) {
             dataValues = [];
             g.selectAll(".nodes")
             .data(y, function(j, i) {
+                var jValue = Math.min(100, j.value); // 최댓값을 100으로
                 dataValues.push([
-                    cfg.w/2*(1-(parseFloat(Math.max(j.value, 0))/cfg.maxValue)*cfg.factor*Math.sin(i*cfg.radians/total)), 
-                    cfg.h/2*(1-(parseFloat(Math.max(j.value, 0))/cfg.maxValue)*cfg.factor*Math.cos(i*cfg.radians/total))
+                    cfg.w/2*(1-(parseFloat(Math.max(jValue, 0))/cfg.maxValue)*cfg.factor*Math.sin(i*cfg.radians/total)), 
+                    cfg.h/2*(1-(parseFloat(Math.max(jValue, 0))/cfg.maxValue)*cfg.factor*Math.cos(i*cfg.radians/total))
                 ]);
             });
             dataValues.push(dataValues[0]);
@@ -203,7 +212,7 @@ var RadarChart = {
                 area.style("stroke-width", cfg.strokeWidthPolygon)
                     .style("stroke", cfg.lineColor)
             } else {
-                area.style("fill-opacity", 0.1);
+                area.style("fill-opacity", 0.2);
             }   
             series++;
         });
@@ -217,7 +226,9 @@ var RadarChart = {
                 .append("svg:circle")
                 .attr("class", "radar-chart-series_"+series)
                 .attr('r', cfg.radius)
-                .attr("alt", function(j){return Math.max(j.value, 0);})
+                .attr("alt", function(j){
+                    return Math.max(j.value, 0);
+                })
                 .attr("cx", function(j, i){
                     dataValues.push([
                         cfg.w/2*(1-(parseFloat(Math.max(j.value, 0))/cfg.maxValue)*cfg.factor*Math.sin(i*cfg.radians/total)), 
@@ -274,10 +285,6 @@ var RadarChart = {
 
 
         if(cfg.showLegend) {
-            /////////////////////////////////////////////
-            ////////////  레전드 초기화  ///////////////////
-            ////////////////////////////////////////////
-            
             var svg = d3.select('#chart-radar')
             .selectAll('svg')
             .append('svg')
