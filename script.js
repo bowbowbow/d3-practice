@@ -1,4 +1,4 @@
-var data = [
+var data1 = [
     [
         {"axis":"탄수화물","value":42},
         {"axis":"단백질","value":9},
@@ -27,9 +27,40 @@ var data = [
     ],
 ];
 
-RadarChart.draw('#chart-radar', data, {
-    w: 280,
-    h: 280,
+var data2 = [
+    [
+        {"axis":"탄수화물","value":42},
+        {"axis":"단백질","value":9},
+        {"axis":"칼슘","value":10},
+        {"axis":"인","value":20},
+        {"axis":"철", "value":33},
+        {"axis":"칼륨","value":53},
+        {"axis":"A","value":44},
+        {"axis":"B1","value":58},
+        {"axis":"B2","value":29},
+        {"axis":"나이아신","value":20},
+        {"axis":"C","value":100},
+    ],
+    [
+        {"axis":"탄수화물","value":100},
+        {"axis":"단백질","value":5},
+        {"axis":"칼슘","value":7},
+        {"axis":"인","value":9},
+        {"axis":"철", "value":58},
+        {"axis":"칼륨","value":35},
+        {"axis":"A","value":0},
+        {"axis":"B1","value":33},
+        {"axis":"B2","value":100},
+        {"axis":"나이아신","value":100},
+        {"axis":"C","value":100},
+    ],
+];
+
+
+RadarChart.draw('#chart-radar-1', data1, {
+    lineColor: '#fd364b',
+});
+RadarChart.draw('#chart-radar-2', data2, {
     lineColor: '#fd364b',
 });
 

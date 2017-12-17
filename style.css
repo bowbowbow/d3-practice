@@ -1,11 +1,36 @@
 @charset "UTF-8";
 
-.big.radarChart {
-    width: 500px;
-    height: 400px;
-    margin: 30px;
+.content {
+	width: 1024px;
+	margin: 0px auto;
 }
 
-#chart-radar1 { 
-    margin-bottom: 60px; 
+.row {
+	display: flex;
+    flex-wrap: wrap;
+}
+
+.grid {
+	position: relative;
+	float: left;
+	width: 12%;
+	height: 20px;
+	padding: 15px;
+	font-size: 12px;
+}
+
+.grid > .circle {
+	position: absolute;
+	top: 20px;
+	left: -5px;
+	width: 5px;
+	height: 5px;
+	border-radius:50%;
+	background-color: red;
+}
+
+.radar-chart {
+	float: left;
+    width: 340px;
+    height: 340px;
 }
