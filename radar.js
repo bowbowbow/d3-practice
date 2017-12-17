@@ -9,8 +9,8 @@ var RadarChart = {
                 return colors[i];
             },
             radius: 5,
-            w: 220,
-            h: 220,
+            w: 200,
+            h: 200,
             factor: 1,
             factorLegend: .85,
             levels: 5,
@@ -18,10 +18,10 @@ var RadarChart = {
             radians: 2 * Math.PI,
             opacityArea: 0.001,
             ToRight: 5,
-            TranslateX: 50,
+            TranslateX: 30,
             TranslateY: 50,
-            ExtraWidthX: 120,
-            ExtraWidthY: 120,
+            ExtraWidthX: 80,
+            ExtraWidthY: 100,
             color: d3.scale.category10(),
             textSizeLevels: "11",
             textSizeTooltip: "11",
@@ -101,7 +101,7 @@ var RadarChart = {
             for (var j=0; j<cfg.levels; j++) {
                 var levelFactor = cfg.factor*radius*((j+1)/cfg.levels);
                 g.selectAll(".levels")
-                .data([1]) //dummy data
+                .data([1]) 
                 .enter()
                 .append("svg:text")
                 .attr("x", function(d){return levelFactor*(1-cfg.factor*Math.sin(0));})
@@ -144,7 +144,7 @@ var RadarChart = {
         .attr("dy", "1.5em")
         .attr("transform", function(d, i){return "translate(0, -10)";})
         .attr("x", function(d, i){
-            return cfg.w/2*(1-cfg.factorLegend*Math.sin(i*cfg.radians/total))-50*Math.sin(i*cfg.radians/total);
+            return cfg.w/2*(1-cfg.factorLegend*Math.sin(i*cfg.radians/total))-35*Math.sin(i*cfg.radians/total);
         })
         .attr("y", function(d, i){
             return cfg.h/2*(1-Math.cos(i*cfg.radians/total))-20*Math.cos(i*cfg.radians/total);
@@ -159,13 +159,12 @@ var RadarChart = {
         })
         .attr("transform", function(d, i){return "translate(0, -10)";})
         .attr("cx", function(d, i){
-            return cfg.w/2*(1-cfg.factorLegend*Math.sin(i*cfg.radians/total))-50*Math.sin(i*cfg.radians/total);
+            return cfg.w/2*(1-cfg.factorLegend*Math.sin(i*cfg.radians/total))-35*Math.sin(i*cfg.radians/total);
         })
         .attr("cy", function(d, i){
             return cfg.h/2*(1-Math.cos(i*cfg.radians/total))-20*Math.cos(i*cfg.radians/total);
         });
         
-        console.log('cfg.maxValue :', cfg.maxValue);
         // 선분 그리기
         data.forEach(function(y, x) {
             dataValues = [];
