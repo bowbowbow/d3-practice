@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.big.radarChart {
+    width: 500px;
+    height: 400px;
+    margin: 30px;
+}
+
+#chart-radar1 { 
+    margin-bottom: 60px; 
+}
