@@ -1,14 +1,13 @@
-var colorscale = function (i) {
-    var colors = [
-    '#e3346f', '#7129e5', '#2a70e9', '#22b6ff', 
-    '#78faf0', '#26fe5f', '#87ec2c', '#eff459',
-    '#ecc92d', '#ff9527', '#e09820', '#ff5a1a'];
-    return colors[i];
-};
-
 var RadarChart = {
     draw: function(id, data, options) {
         var cfg = {
+            colorscale: function (i) {
+                var colors = [
+                '#e3346f', '#7129e5', '#2a70e9', '#22b6ff', 
+                '#78faf0', '#26fe5f', '#87ec2c', '#eff459',
+                '#ecc92d', '#ff9527', '#e09820', '#ff5a1a'];
+                return colors[i];
+            },
             radius: 5,
             w: 280,
             h: 280,
@@ -32,7 +31,7 @@ var RadarChart = {
             legendOptions: ['단감', '단감잼'],
             showVertex: false,
             showAxes: true,
-            showAxesLabels: true,
+            showAxesLabels: false,
             showLegend: false,
             showLevels: true,
             showLevelsLabels: false,
@@ -90,22 +89,24 @@ var RadarChart = {
             }
         };
         
-        // 레벨 별 비율 수치
-        // for (var j=0; j<cfg.levels; j++) {
-        //     var levelFactor = cfg.factor*radius*((j+1)/cfg.levels);
-        //     g.selectAll(".levels")
-        //     .data([1]) //dummy data
-        //     .enter()
-        //     .append("svg:text")
-        //     .attr("x", function(d){return levelFactor*(1-cfg.factor*Math.sin(0));})
-        //     .attr("y", function(d){return levelFactor*(1-cfg.factor*Math.cos(0));})
-        //     .attr("class", "legend")
-        //     .style("font-family", "sans-serif")
-        //     .style("font-size", cfg.textSizeLevels)
-        //     .attr("transform", "translate(" + (cfg.w/2-levelFactor + cfg.ToRight) + ", " + (cfg.h/2-levelFactor) + ")")
-        //     .attr("fill", "#737373")
-        //     .text((j+1)*cfg.maxValue/cfg.levels);
-        // }
+        if(cfg.showAxesLabels) {
+            // 레벨 별 비율 수치
+            for (var j=0; j<cfg.levels; j++) {
+                var levelFactor = cfg.factor*radius*((j+1)/cfg.levels);
+                g.selectAll(".levels")
+                .data([1]) //dummy data
+                .enter()
+                .append("svg:text")
+                .attr("x", function(d){return levelFactor*(1-cfg.factor*Math.sin(0));})
+                .attr("y", function(d){return levelFactor*(1-cfg.factor*Math.cos(0));})
+                .attr("class", "legend")
+                .style("font-family", "sans-serif")
+                .style("font-size", cfg.textSizeLevels)
+                .attr("transform", "translate(" + (cfg.w/2-levelFactor + cfg.ToRight) + ", " + (cfg.h/2-levelFactor) + ")")
+                .attr("fill", "#737373")
+                .text((j+1)*cfg.maxValue/cfg.levels);
+            }
+        }   
         
         series = 0;
         
@@ -147,7 +148,7 @@ var RadarChart = {
         .attr("class", "cicle")
         .attr("r", 3)
         .style("fill", function(d, i) {
-            return colorscale(i);
+            return cfg.colorscale(i);
         })
         .attr("transform", function(d, i){return "translate(0, -10)";})
         .attr("cx", function(d, i){
@@ -303,7 +304,7 @@ var RadarChart = {
             .attr("width", 10)
             .attr("height", 10)
             .style("fill", function(d, i) {
-                return colorscale(i);
+                return cfg.colorscale(i);
             });
             
             // 레전드 텍스트
