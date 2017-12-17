@@ -1,5 +1,4 @@
-var wMaior = 280;
-var wMenor = 280;
+
 
 var colorscale = function (i) {
     var colors = [
@@ -40,6 +39,9 @@ var json = [
 ];
 
 function drawRadarCharts() {
+    var divId = '#chart-radar';
+    var wMaior = 280;
+    var wMenor = 280;
     drawRadarChart('#chart-radar', wMaior, wMaior);
 };
 
@@ -83,8 +85,7 @@ function drawRadarChart(divId, w, h) {
             var allAxis = (data[0].map(function(i, j){return i.axis;}));
             var total = allAxis.length;
             var radius = cfg.factor*Math.min(cfg.w/2, cfg.h/2);
-            d3.select(id)
-                .select("svg").remove();
+            d3.select(id).select("svg").remove();
             
             var g = d3.select(id)
                 .append("svg")
@@ -183,77 +184,56 @@ function drawRadarChart(divId, w, h) {
             
             // 선분 그리기
             data.forEach(function(y, x) {
-                if(series % 2 == 0) {
-                    dataValues = [];
-                    g.selectAll(".nodes")
-                    .data(y, function(j, i) {
-                        dataValues.push([
-                            cfg.w/2*(1-(parseFloat(Math.max(j.value, 0))/cfg.maxValue)*cfg.factor*Math.sin(i*cfg.radians/total)), 
-                            cfg.h/2*(1-(parseFloat(Math.max(j.value, 0))/cfg.maxValue)*cfg.factor*Math.cos(i*cfg.radians/total))
-                        ]);
-                    });
-                    dataValues.push(dataValues[0]);
-                    g.selectAll(".area")
-                    .data([dataValues])
-                    .enter()
-                    .append("polygon")
-                    .attr("class", "radar-chart-series_"+series)
-                    .style("stroke-width", strokeWidthPolygon)
-                    .style("stroke", lineColor)
-                    .attr("points",function(d) {
-                        var str="";
-                        for (var pti=0;pti<d.length;pti++) {
-                            str=str+d[pti][0]+","+d[pti][1]+" ";
-                        }
-                        return str;
-                    })
-                    .style("fill", lineColor)
-                    .style("fill-opacity", cfg.opacityArea)
-                    .on('mouseover', function (d) {
-                        z = "polygon."+d3.select(this).attr("class");
-                        g.selectAll("polygon")
-                        .transition(200)
-                        .style("fill-opacity", 0.1);
-                        g.selectAll(z)
-                        .transition(200)
-                        .style("fill-opacity", 0.7);
-                    })
-                    .on('mouseout', function() {
-                        g.selectAll("polygon")
-                        .transition(200)
-                        .style("fill-opacity", cfg.opacityArea);
-                    });
+                dataValues = [];
+                g.selectAll(".nodes")
+                .data(y, function(j, i) {
+                    dataValues.push([
+                        cfg.w/2*(1-(parseFloat(Math.max(j.value, 0))/cfg.maxValue)*cfg.factor*Math.sin(i*cfg.radians/total)), 
+                        cfg.h/2*(1-(parseFloat(Math.max(j.value, 0))/cfg.maxValue)*cfg.factor*Math.cos(i*cfg.radians/total))
+                    ]);
+                });
+                dataValues.push(dataValues[0]);
+
+                var area = g.selectAll(".area")
+                .data([dataValues])
+                .enter()
+                .append("polygon")
+                .attr("class", "radar-chart-series_"+series)
+                .attr("points",function(d) {
+                    var str="";
+                    for (var pti=0;pti<d.length;pti++) {
+                        str=str+d[pti][0]+","+d[pti][1]+" ";
+                    }
+                    return str;
+                })
+                .style("fill", lineColor)
+                .style("fill-opacity", cfg.opacityArea)
+                // .on('mouseover', function (d) {
+                //     z = "polygon."+d3.select(this).attr("class");
+                //     g.selectAll("polygon")
+                //     .transition(200)
+                //     .style("fill-opacity", 0.1);
+                //     g.selectAll(z)
+                //     .transition(200)
+                //     .style("fill-opacity", 0.7);
+                // })
+                // .on('mouseout', function() {
+                //     g.selectAll("polygon")
+                //     .transition(200)
+                //     .style("fill-opacity", cfg.opacityArea);
+                // });
+
+                if(series %2 == 0) {
+                    area.style("stroke-width", strokeWidthPolygon)
+                        .style("stroke", lineColor)
                 } else {
-                    dataValues = [];
-                    g.selectAll(".nodes")
-                    .data(y, function(j, i) {
-                        dataValues.push([
-                            cfg.w/2*(1-(parseFloat(Math.max(j.value, 0))/cfg.maxValue)*cfg.factor*Math.sin(i*cfg.radians/total)), 
-                            cfg.h/2*(1-(parseFloat(Math.max(j.value, 0))/cfg.maxValue)*cfg.factor*Math.cos(i*cfg.radians/total))
-                        ]);
-                    });
-                    dataValues.push(dataValues[0]);
-                    g.selectAll(".area")
-                    .data([dataValues])
-                    .enter()
-                    .append("polygon")
-                    .attr("class", "radar-chart-series_"+series)
-                    .attr("points",function(d) {
-                        var str="";
-                        for (var pti=0;pti<d.length;pti++) {
-                            str=str+d[pti][0]+","+d[pti][1]+" ";
-                        }
-                        return str;
-                    })
-                    .style("fill", lineColor)
-                    .style("fill-opacity", 0.1);
-                }
+                    area.style("fill-opacity", 0.1);
+                }   
                 series++;
             });
             
-            series=0;
-            
             // 선분의 꼭지점에 원 그리기
+            // series=0;
             // data.forEach(function(y, x) {
             //     g.selectAll(".nodes")
             //     .data(y).enter()
