@@ -1,100 +1,172 @@
 <!DOCTYPE html>
-<html>  
+<html>
 <head>
-    <!--문자코드-->
-    <meta charset="utf-8" />
-    <title>User Interfaces</title>
-    <!--stylesheet와 연결-->
-    <link rel="stylesheet" type="text/css" href="./style.css">
+  <!--문자코드-->
+  <meta charset="utf-8"/>
+  <title>User Interfaces</title>
+  <!--stylesheet와 연결-->
+  <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
-    <div class="content">
-    	<div style="border-bottom: 1px solid #EEE; width: 1080px; margin: 0px auto; font-size: 14px; color: #6d6d6d">
-    		<h3>영양소 별로 보기</h3>
-    	</div>
-    	<div class="row" style="width: 1160px; margin: 0px auto; padding: 30px 0px; margin-left:7px;">
-    		<div class="grid"><div class="circle" style="background-color: #ff2c6f"></div>탄수화물 </div>
-    		<div class="grid"><div class="circle" style="background-color: #f3622d"></div>단백질</div>
-    		<div class="grid"><div class="circle" style="background-color: #f0cb24"></div>칼슘</div>
-    		<div class="grid"><div class="circle" style="background-color: #f5c736"></div>인</div>
-    		<div class="grid"><div class="circle" style="background-color: #fef713"></div>철</div>
-    		<div class="grid"><div class="circle" style="background-color: #8cf830"></div>칼륨</div>
-    		<div class="grid"><div class="circle" style="background-color: #34f872"></div>A</div>
-    		<div class="grid"><div class="circle" style="background-color: #2cfae6"></div>B1</div>
-    		<div class="grid"><div class="circle" style="background-color: #39abf1"></div>B2</div>
-    		<div class="grid"><div class="circle" style="background-color: #3072e2"></div>나이아신</div>
-    		<div class="grid"><div class="circle" style="background-color: #7d2aff"></div>C</div>
-    	</div>
-    	<div class="row-space" style="margin-top: 50px">
-    		<div class="chart-wrapper">
-    			<div class="chart-title">
-    				사과
-    				<img src="./images/사과.png"/>
-    			</div>
-    			<div class="radar-chart" id="chart-radar-1"></div>
-        	</div>
-        	<div class="chart-wrapper">
-    			<div class="chart-title">
-    				귤
-    				<img src="./images/귤.png"/>
-    			</div>
-    			<div class="radar-chart" id="chart-radar-2"></div>
-        	</div>
-        	<div class="chart-wrapper">
-    			<div class="chart-title">
-    				딸기
-    				<img src="./images/딸기.png"/>
-    			</div>
-    			<div class="radar-chart" id="chart-radar-3"></div>
-        	</div>
-        </div>
-        <div class="row-space">
-        	<div class="chart-wrapper">
-    			<div class="chart-title">
-    				복숭아
-    				<img src="./images/복숭아.png"/>
-    			</div>
-    			<div class="radar-chart" id="chart-radar-4"></div>
-        	</div>
-        	<div class="chart-wrapper">
-    			<div class="chart-title">
-    				블루베리
-    				<img src="./images/블루베리.png"/>
-    			</div>
-    			<div class="radar-chart" id="chart-radar-5"></div>
-        	</div>
-        	<div class="chart-wrapper">
-    			<div class="chart-title">
-    				감
-    				<img src="./images/감.png"/>
-    			</div>
-    			<div class="radar-chart" id="chart-radar-6"></div>
-        	</div>
-        </div>
-        <div class="row-space">
-        	<div class="chart-wrapper">
-    			<div class="chart-title">
-    				살구
-    				<img src="./images/살구.png"/>
-    			</div>
-    			<div class="radar-chart" id="chart-radar-7"></div>
-        	</div>
-        	<div class="chart-wrapper">
-    			<div class="chart-title">
-    				포도
-    				<img src="./images/포도.png"/>
-    			</div>
-    			<div class="radar-chart" id="chart-radar-8"></div>
-        	</div>
-        	<div class="chart-wrapper">
-    			<div class="chart-title">
-    				청포도
-    				<img src="./images/청포도.png"/>
-    			</div>
-    			<div class="radar-chart" id="chart-radar-9"></div>
-        	</div>
-    	</div>
+<div class="content">
+  <div class="row" style="height: 201px; margin-top: 99px;">
+    <div style="width: 900px; margin: 0px auto; text-align: center;">
+      <div style="font-size: 20px;font-weight: 600; color: #3c3c3c">과일 잼 보관기한</div>
+      <div style="font-size: 16px; margin-top:30px; line-height: 26px; color: #8b8b8b">
+        과일의 보관기한은 1개월 미만으로 보관기한이 짧았고, 잼의 보관기한은 24개월(2년)으로<br>
+        <span style="color: #616161">과일과 잼의 보관기한은 24배</span>정도 차이가 났습니다.
+      </div>
     </div>
+  </div>
+  <div class="row">
+      
+  </div>
+</div>
+<div style="width: 100%; background-color: #f9f9f9;">
+  <div class="content"
+       style="
+       background-image: url('./images/Q.png');
+       background-repeat: no-repeat;
+       background-position: center;
+       "
+  >
+    <div class="row" style="height: 302px; padding: 90px 0px;">
+      <div style="width: 900px; margin: 0px auto; text-align: center;">
+        <div
+            style="font-size: 20px;font-weight: 600; color: #3c3c3c"
+        >
+          장기간 보관하기 위하여 만든 잼! 하지만 영양소도 보관이되나?
+        </div>
+        <div
+            style="font-size: 16px; margin-top:30px; line-height: 26px; color: #8b8b8b"
+        >
+          과일을 장기 보관하기 위하여 잼을 만들었다 합니다. 잼 보관기간은 늘었지만 영양소도 보관되었을까요?<br>
+          <span style="color: #616161">과일을 잼으로 가공하였을 때 영양소의 하루섭취권장량의 변화</span>에 관하여 시각화하였습니다.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="content" style="margin-top: 148px;">
+  <div style="border-bottom: 1px solid #EEE; width: 1080px; margin: 0px auto; font-size: 14px; color: #6d6d6d">
+    <h3>영양소 별로 보기</h3>
+  </div>
+  <div class="row" style="width: 1160px; margin: 0px auto; padding: 30px 0px; margin-left:7px;">
+    <div class="grid">
+      <div class="circle" style="background-color: #ff2c6f"></div>
+      탄수화물
+    </div>
+    <div class="grid">
+      <div class="circle" style="background-color: #f3622d"></div>
+      단백질
+    </div>
+    <div class="grid">
+      <div class="circle" style="background-color: #f0cb24"></div>
+      칼슘
+    </div>
+    <div class="grid">
+      <div class="circle" style="background-color: #f5c736"></div>
+      인
+    </div>
+    <div class="grid">
+      <div class="circle" style="background-color: #fef713"></div>
+      철
+    </div>
+    <div class="grid">
+      <div class="circle" style="background-color: #8cf830"></div>
+      칼륨
+    </div>
+    <div class="grid">
+      <div class="circle" style="background-color: #34f872"></div>
+      A
+    </div>
+    <div class="grid">
+      <div class="circle" style="background-color: #2cfae6"></div>
+      B1
+    </div>
+    <div class="grid">
+      <div class="circle" style="background-color: #39abf1"></div>
+      B2
+    </div>
+    <div class="grid">
+      <div class="circle" style="background-color: #3072e2"></div>
+      나이아신
+    </div>
+    <div class="grid">
+      <div class="circle" style="background-color: #7d2aff"></div>
+      C
+    </div>
+  </div>
+  <div class="row-space" style="margin-top: 50px">
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        사과
+        <img src="./images/사과.png"/>
+      </div>
+      <div class="radar-chart" id="chart-radar-1"></div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        귤
+        <img src="./images/귤.png"/>
+      </div>
+      <div class="radar-chart" id="chart-radar-2"></div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        딸기
+        <img src="./images/딸기.png"/>
+      </div>
+      <div class="radar-chart" id="chart-radar-3"></div>
+    </div>
+  </div>
+  <div class="row-space">
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        복숭아
+        <img src="./images/복숭아.png"/>
+      </div>
+      <div class="radar-chart" id="chart-radar-4"></div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        블루베리
+        <img src="./images/블루베리.png"/>
+      </div>
+      <div class="radar-chart" id="chart-radar-5"></div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        감
+        <img src="./images/감.png"/>
+      </div>
+      <div class="radar-chart" id="chart-radar-6"></div>
+    </div>
+  </div>
+  <div class="row-space">
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        살구
+        <img src="./images/살구.png"/>
+      </div>
+      <div class="radar-chart" id="chart-radar-7"></div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        포도
+        <img src="./images/포도.png"/>
+      </div>
+      <div class="radar-chart" id="chart-radar-8"></div>
+    </div>
+    <div class="chart-wrapper">
+      <div class="chart-title">
+        청포도
+        <img src="./images/청포도.png"/>
+      </div>
+      <div class="radar-chart" id="chart-radar-9"></div>
+    </div>
+  </div>
+</div>
 </body>
 
 <!--d3와 연결-->
