@@ -1,6 +1,13 @@
 @charset "UTF-8";
 /* 나눔 스퀘어 라운드 적용하기 */
 
+/* 라인 라트 */
+#line-graph path {
+	stroke: #000;
+	stroke-width: 2;
+	fill: none;
+}
+
 /* 바차트 */
 #tooltip {
 	position: absolute;
@@ -54,6 +61,7 @@ rect:hover{
 	fill: #787878;
 }
 
+/* 레이아웃 구성용 */
 * {
 	box-sizing: border-box;
 }

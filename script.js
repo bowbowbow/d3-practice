@@ -273,33 +273,34 @@ var data9 = [
 
 
 RadarChart.draw('#chart-radar-1', data1, {
-    lineColor: '#fd364b',
+    lineColor: '#fd364b'
 });
 RadarChart.draw('#chart-radar-2', data2, {
-    lineColor: '#fbb344',
+    lineColor: '#fbb344'
 });
 RadarChart.draw('#chart-radar-3', data3, {
-    lineColor: '#ec5372',
+    lineColor: '#ec5372'
 });
 RadarChart.draw('#chart-radar-4', data4, {
-    lineColor: '#ffa4cb',
+    lineColor: '#ffa4cb'
 });
 RadarChart.draw('#chart-radar-5', data5, {
-    lineColor: '#2640b1',
+    lineColor: '#2640b1'
 });
 RadarChart.draw('#chart-radar-6', data6, {
-    lineColor: '#ffa73d',
+    lineColor: '#ffa73d'
 });
 RadarChart.draw('#chart-radar-7', data7, {
-    lineColor: '#fca48e',
+    lineColor: '#fca48e'
 });
 RadarChart.draw('#chart-radar-8', data8, {
-    lineColor: '#6c1fcd',
+    lineColor: '#6c1fcd'
 });
 RadarChart.draw('#chart-radar-9', data9, {
-    lineColor: '#89db2e',
+    lineColor: '#89db2e'
 });
 
 
 drawBarGraph();
 drawPieGraph();
+drawLineGraph();
