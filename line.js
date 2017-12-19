@@ -102,7 +102,7 @@ function drawLineGraph() {
   .style('stroke-width', .5);
   svg.selectAll('.yTick path')
   .style('fill', 'none')
-  .style('stroke', '#eee')
+  .style('stroke', '#e4e4e4')
   .style('stroke-width', .5);
 
   svg.append("g")
@@ -153,7 +153,7 @@ function drawLineGraph() {
     return y(d.value);
   })
   .attr("r", 3)
-  .attr("stroke-width", 4)
+  .attr("stroke-width", 4);
 
   topicEnter.append("g").selectAll(".dot")
   .data(function (d) {
