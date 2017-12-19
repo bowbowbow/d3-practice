@@ -301,5 +301,5 @@ RadarChart.draw('#chart-radar-9', data9, {
 });
 
 
-
 drawBarGraph();
+drawPieGraph();

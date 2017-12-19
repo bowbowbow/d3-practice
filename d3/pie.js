@@ -1,4 +1,4 @@
-function drawBarGraph() {
+function drawPieGraph() {
   var margin = {
       top: 25, right: 200, bottom: 35, left: 85
     },

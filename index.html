@@ -11,6 +11,46 @@
 <div class="content">
   <div class="row" style="height: 201px; margin-top: 99px;">
     <div style="width: 900px; margin: 0px auto; text-align: center;">
+      <div style="font-size: 20px;font-weight: 600; color: #3c3c3c">세계 과일잼 수요량 중 각 나라(지역)의 비중</div>
+      <div style="font-size: 16px; margin-top:30px; line-height: 26px; color: #8b8b8b">
+        식습관의 영향으로 과일잼은 주로 유럽 및 북남미지역에서 소비되며 세계 과일잼 소비량의 70%를 차지합니다.<br>
+        최근 중국인 식습관 변화로 과일잼 수요는 세계 과일잼 소비의 8.7%를 차지하게 됐습니다.
+      </div>
+    </div>
+  </div>
+  <div class="row" style="position: relative;">
+    <div id="pie-graph" style="margin: 0px 0px 90px 230px;"></div>
+  </div>
+</div>
+<div style="width: 100%; background-color: #f9f9f9;">
+  <div class="content">
+    <div class="row" style="height: 752px; padding: 90px 0px;">
+      <div style="width: 900px; margin: 0px auto; text-align: center;">
+        <div
+            style="font-size: 20px;font-weight: 600; color: #3c3c3c"
+        >
+          잼의 역사
+        </div>
+        <div
+            style="font-size: 13px; margin-top:30px; line-height: 30px; color: #8b8b8b"
+        >
+          최초의 기록은 BC 320년경 알렉산더 대왕이 인도를 정복하고 돌아갈 때 유럽에 설탕을 가져가 이 소량의 설탕을 사용하여 잼을 사용하여 잼을 만들어 소중하게 먹었다고합니다.<br>
+          설탕을 자유로이 사용할 수 있게 되면서 북유럽은 추운 곳인 관계로 과일이 귀했으므로 겨울을 위한 저장식품으로서 주부들이 가정에서 잼을 만들게 되었는데 <br>
+          나중에 병조림법과 통조림법이 발명됨과 동시에 기업화되었으며, 상품화하여 대량생산이 되었습니다. <br>
+          <span style="color: #616161">잼을 유럽에게 부패를 막기 위해서 그리고 장기간 보관하기 위해서 만들어진 식품입니다.</span>
+        </div>
+        <div style="
+        width: 700px; height: 500px;
+        margin: 0px auto;
+        background-position: center; background-repeat: no-repeat; background-size: 100% auto; background-image: url('./images/map.png');">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="row" style="height: 201px; margin-top: 99px;">
+    <div style="width: 900px; margin: 0px auto; text-align: center;">
       <div style="font-size: 20px;font-weight: 600; color: #3c3c3c">과일 잼 보관기한</div>
       <div style="font-size: 16px; margin-top:30px; line-height: 26px; color: #8b8b8b">
         과일의 보관기한은 1개월 미만으로 보관기한이 짧았고, 잼의 보관기한은 24개월(2년)으로<br>
@@ -18,8 +58,10 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div id="bar-graph"></div>
+  <div class="row" style="position: relative;">
+    <img src="./images/wave.png"
+         style="position: absolute; left: 295px; top: 45px; width: 530px"/>
+    <div id="bar-graph" style="margin: 0px 0px 90px 230px;"></div>
   </div>
 </div>
 <div style="width: 100%; background-color: #f9f9f9;">
@@ -169,6 +211,7 @@
 </div>
 </body>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
 <script src="./radar.js"></script>
 <script src="./bar.js"></script>
