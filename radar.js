@@ -1,12 +1,21 @@
 var RadarChart = {
     draw: function(id, data, options) {
         var cfg = {
-            colorscale: function (i) {
-                var colors = [
-                '#e3346f', '#ff5a1a', '#e09820', '#ff9527',
-                '#ecc92d', '#7ef50f', '#87ec2c', '#26fe5f',
-                '#78faf0', '#22b6ff', '#2a70e9', '#7129e5'];
-                return colors[i];
+            colorscale: function (name) {
+                var colors = {
+                    '탄수화물': '#e3346f',
+                    '단백질': '#ff5a1a',
+                    '칼슘': '#e09820',
+                    '인': '#ff9527',
+                    '철': '#ecc92d',
+                    '칼륨': '#7ef50f',
+                    'A': '#26fe5f',
+                    'B1': '#78faf0',
+                    'B2': '#22b6ff',
+                    '나이아신': '#2a70e9',
+                    'C': '#7129e5'
+                };
+                return colors[name];
             },
             radius: 7,
             w: 200,
@@ -154,7 +163,7 @@ var RadarChart = {
         .attr("class", "cicle")
         .attr("r", 3)
         .style("fill", function(d, i) {
-            return cfg.colorscale(i);
+            return cfg.colorscale(d);
         })
         .attr("transform", function(d, i){return "translate(0, -10)";})
         .attr("cx", function(d, i){
@@ -305,7 +314,7 @@ var RadarChart = {
             .attr("width", 10)
             .attr("height", 10)
             .style("fill", function(d, i) {
-                return cfg.colorscale(i);
+                return cfg.colorscale(d);
             });
             
             // 레전드 텍스트

@@ -201,6 +201,13 @@ rect:hover{
 	background-color: red;
 }
 
+/* 그리드 */
+.cgrid {
+	text-decoration: underline;
+}
+
+/* 차트 */
+
 .chart-wrapper {
 	width:300px;
 	padding: 60px 0px;
