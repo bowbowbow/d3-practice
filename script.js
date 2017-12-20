@@ -326,8 +326,21 @@ $(document).ready(function () {
   drawPieGraph();
   drawLineGraph();
 
+  var diff = 0, before = 0, iter = 0;
   function onScroll() {
+    iter++;
     var scroll = $(document).scrollTop();
+
+    if(iter % 3 == 0) {
+      diff = scroll - before;
+      if (diff < 0) {
+        $('.nav').css('position', 'fixed');
+      } else {
+        $('.nav').css('position', 'absolute');
+      }
+      console.log('diff :', diff);
+      before = scroll;
+    }
 
     $('.active').removeClass("active");
     if (scroll <= 1092) {
@@ -350,7 +363,7 @@ $(document).ready(function () {
     $('html, body').stop().animate({
       'scrollTop': scroll
     }, 500, 'swing', function () {
-      $(document).on("scroll", onScroll);
+      
     });
   })
 
