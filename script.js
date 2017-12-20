@@ -363,7 +363,7 @@ $(document).ready(function () {
     $('html, body').stop().animate({
       'scrollTop': scroll
     }, 500, 'swing', function () {
-      
+
     });
   })
 

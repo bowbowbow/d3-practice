@@ -70,6 +70,11 @@ function drawPieGraph() {
     .attr("stroke-width",6);
   })
   .on("mouseout", function(d) {
+    d3.select('.legend text')
+    .text(function () {
+      return '';
+    });
+
     d3.select(this).transition()
     .attr("d", arc)
     .attr("stroke","none");
@@ -93,7 +98,7 @@ function drawPieGraph() {
   .attr("width", 200)
   .attr("height", 200)
   .append("text")
-  .text('29.6%')
+  .text('')
   .attr('fill', '#7b7b7b')
   .attr('font-size', '23px')
   .attr('text-anchor',"middle")
