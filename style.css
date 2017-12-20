@@ -104,10 +104,12 @@ div.tooltip {
 	height: 40px;
 	padding: 2px;
 	font: 12px sans-serif;
-	background: #eee;
-	border: 1px solid #ccc;
-	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.75);
+	border: 1px solid #E2E2E2;
+	border-radius: 20px;
 	pointer-events: none;
+	opacity: 0.1;
+	color: #939393;
 }
 
 /* 바차트 */
