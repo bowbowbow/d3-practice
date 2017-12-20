@@ -58,6 +58,9 @@ function drawBarGraph() {
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+  var div = d3.select("body").append("div").attr("class", "tooltip")
+  .style("opacity", 0);
+
   // Graph Bars
   var sets = svg.selectAll(".set")
     .data(dataset)
@@ -79,6 +82,16 @@ function drawBarGraph() {
     return h - yScale(d.local);
   })
   .attr("fill", colors[1][1])
+  .on("mouseover", function(d) {
+    console.log('d : ', d);
+    div.transition().duration(100).style("opacity", .9);
+    div.html( d.local.toFixed(2) + '개월')
+    .style("left", (d3.event.pageX) + "px")
+    .style("top", (d3.event.pageY - 28) + "px")
+    .style("padding-top", "12px")
+  }).on("mouseout", function(d) {
+    div.transition().duration(100).style("opacity", 0);
+  })
   .append("text")
   .text(function (d) {
     return d.local;
@@ -105,6 +118,15 @@ function drawBarGraph() {
     return h - yScale(d.global);
   })
   .attr("fill", colors[0][1])
+  .on("mouseover", function(d) {
+    div.transition().duration(100).style("opacity", .9);
+    div.html('24개월')
+    .style("left", (d3.event.pageX) + "px")
+    .style("top", (d3.event.pageY - 28) + "px")
+    .style("padding-top", "12px")
+  }).on("mouseout", function(d) {
+    div.transition().duration(100).style("opacity", 0);
+  })
   .append("text")
   .text(function (d) {
     return d.global;
@@ -118,7 +140,6 @@ function drawBarGraph() {
   })
   .attr("font-family", "sans-serif")
   .attr("font-size", "11px")
-  .attr("fill", "red");
 
   // xAxis
   svg.append("g") // Add the X Axis
