@@ -83,7 +83,6 @@ function drawBarGraph() {
   })
   .attr("fill", colors[1][1])
   .on("mouseover", function(d) {
-    console.log('d : ', d);
     div.transition().duration(100).style("opacity", .9);
     div.html( d.local.toFixed(2) + '개월')
     .style("left", (d3.event.pageX) + "px")

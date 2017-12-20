@@ -8,7 +8,7 @@ var RadarChart = {
                 '#78faf0', '#22b6ff', '#2a70e9', '#7129e5'];
                 return colors[i];
             },
-            radius: 5,
+            radius: 7,
             w: 200,
             h: 200,
             factor: 1,
@@ -28,7 +28,7 @@ var RadarChart = {
             strokeWidthPolygon: "1px",
             lineColor: '#fd364b',
             legendOptions: ['단감', '단감잼'],
-            showVertex: false,
+            showVertex: true,
             showAxes: true,
             showAxesLabels: false,
             showLegend: false,
@@ -240,7 +240,7 @@ var RadarChart = {
                 .attr("data-id", function(j){
                     return j.axis;
                 })
-                .style("fill", cfg.color(series)).style("fill-opacity", .9)
+                .style("fill", cfg.lineColor).style("fill-opacity", 0)
                 .on('mouseover', function (d){
                     newX =  parseFloat(d3.select(this).attr('cx')) - 10;
                     newY =  parseFloat(d3.select(this).attr('cy')) - 5;
@@ -251,20 +251,16 @@ var RadarChart = {
                     .transition(200)
                     .style('opacity', 1);
                     
-                    z = "polygon." + d3.select(this).attr("class");
-                    g.selectAll("polygon")
-                    .transition(200)
-                    .style("fill-opacity", 0.1); 
-                    g.selectAll(z)
-                    .transition(200)
-                    .style("fill-opacity", 0.7);
+                    d3.select(this)
+                    .style("fill-opacity", 1);
                 })
                 .on('mouseout', function(){
-                    tooltip.transition(200)
-                    .style('opacity', 0);
-                    g.selectAll("polygon")
-                    .transition(200)
-                    .style("fill-opacity", cfg.opacityArea);
+                  tooltip
+                  .transition(200)
+                  .style('opacity', 0);
+
+                  d3.select(this)
+                  .style("fill-opacity", 0);
                 })
                 .append("svg:title")
                 .text(function(j){
