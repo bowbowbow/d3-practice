@@ -3,9 +3,9 @@ var RadarChart = {
         var cfg = {
             colorscale: function (i) {
                 var colors = [
-                '#e3346f', '#7129e5', '#2a70e9', '#22b6ff', 
-                '#78faf0', '#26fe5f', '#87ec2c', '#eff459',
-                '#ecc92d', '#ff9527', '#e09820', '#ff5a1a'];
+                '#e3346f', '#ff5a1a', '#e09820', '#ff9527',
+                '#ecc92d', '#7ef50f', '#87ec2c', '#26fe5f',
+                '#78faf0', '#22b6ff', '#2a70e9', '#7129e5'];
                 return colors[i];
             },
             radius: 5,
@@ -131,7 +131,7 @@ var RadarChart = {
         .attr("class", "line")
         .style("stroke-opacity", "0.75")
         .style("stroke-width", "0.3px")
-        .style("stroke", "grey")
+        .style("stroke", "grey");
         
         // 포인트 별 과일 이름
         axis.append("text")
