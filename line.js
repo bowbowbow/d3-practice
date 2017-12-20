@@ -161,6 +161,7 @@ function drawLineGraph() {
   }).enter()
   .append("circle")
   .attr("clip-path", "url(#clip)")
+  .attr("fill", 'white')
   .attr("stroke", 'white')
   .attr("cx", function (d) {
     return x(d.date);
@@ -169,5 +170,19 @@ function drawLineGraph() {
     return y(d.value);
   })
   .attr("r", 1)
-  .attr("stroke-width", 4)
+  .attr("stroke-width", 2)
+  .on("mouseover", function(d) {
+    div.transition().duration(100).style("opacity", .9);
+    div.html(d.date+ "년도 <br>" + d.value + '톤')
+    .style("left", (d3.event.pageX) + "px")
+    .style("top", (d3.event.pageY - 28) + "px")
+    .style("padding-top", "5px")
+    .attr('r', 8);
+    d3.select(this).attr('r', 8);
+    d3.select(this).attr('stroke', '#e93a57');
+  }).on("mouseout", function(d) {
+    div.transition().duration(100).style("opacity", 0);
+    d3.select(this).attr('r', 1);
+    d3.select(this).attr('stroke', 'white');
+  });
 }
