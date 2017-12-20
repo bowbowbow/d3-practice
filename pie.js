@@ -55,6 +55,24 @@ function drawPieGraph() {
   .attr('d', arc)
   .attr('fill', function(d, i) {
     return color(i);
+  })
+  .on("mouseover", function(d) {
+    d3.select('.legend text')
+    .text(function () {
+      return d.value+'%';
+    });
+
+    d3.select(this)
+    .attr("stroke","white")
+    .transition()
+    .duration(500)
+    .attr("d", arc)
+    .attr("stroke-width",6);
+  })
+  .on("mouseout", function(d) {
+    d3.select(this).transition()
+    .attr("d", arc)
+    .attr("stroke","none");
   });
 
   pieValues.append("text")
